@@ -12,3 +12,14 @@ this script is for making a mach between the stars in the images with the 2mass 
 
 tophot.sh\
 this script rewrites the first two lines of the .coord file to the new .coo file. this is needed to do the photometry in IRAF
+
+guion1.cl (author : G. pinzon).\
+This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
+
+
+
+# aperture study
+guion1.cl (author : G. pinzon).\
+This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
+before executing the script it is necessary to change the parameters in IRAF. these changes are specified in the guion1.cl
+we are going to do an aperture study so, we are going to change the aperture parameter (in line 97) from 8 to 15  
