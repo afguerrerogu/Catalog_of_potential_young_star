@@ -26,7 +26,8 @@ before executing the script it is necessary to change the parameters in IRAF. th
 we are going to do an aperture study so, we are going to change the aperture parameter (in line 97) from 8 to 15. In the last line we have to change the name of the output file for each aperture   
 Executing this file in IRAF whit >: cl < guion1.cl
 
-**configure IRAF**
+configure IRAF
+--
 
 Configurar la tarea phot de APPHOT\
 noao.digi.APPHOT\
