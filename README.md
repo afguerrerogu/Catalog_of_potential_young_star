@@ -27,75 +27,74 @@ we are going to do an aperture study so, we are going to change the aperture par
 
 # configure IRAF
 
-#Configurar la tarea phot de APPHOT
-#noao.digi.APPHOT
-#Configurar la tarea phot de APPHOT
-#noao.digi.APPHOT
+Configurar la tarea phot de APPHOT
+noao.digi.APPHOT
+Configurar la tarea phot de APPHOT
+noao.digi.APPHOT
 
-#configurar tareas datapars, photpars, fitskypars, centerpars previamente:
-#consultar manual camara
-# http://www.astronomy.ohio-state.edu/~martini/osmos/
+configurar tareas datapars, photpars, fitskypars, centerpars previamente:
+consultar manual camara
+ http://www.astronomy.ohio-state.edu/~martini/osmos/
 
-#epar datapars
+**epar datapars
 
-#fwhmpsf 4
-#sigma 3
-#readnoi 3.8
-#epadu 1
-#exposur EXPTIME
-#airmass AIRMASS
-#filter FILTID2
-#obstime TIME-OBS
+fwhmpsf 4
+sigma 3
+readnoi 3.8
+epadu 1
+exposur EXPTIME
+airmass AIRMASS
+filter FILTID2
+obstime TIME-OBS
 
-#epar centerpars
-#calgori centroid
-#cbox 8
-#cthresh 0
-#minsnra 1
-#cmaxite 10
+**epar centerpars
+calgori centroid
+cbox 8
+cthresh 0
+minsnra 1
+cmaxite 10
+
+**epar fitskypars
+
+**epar phot
+
+image @n3fits.lis
+coords @n3coord.lis
+datapar datapars
+centerp centerpars
+fitskyp fitskypars
+photpar photpars
+
+pdump  lo configuramos con salida XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR:
+
+**apphot> lpar pdump
+        infiles = "*.mag.1"       Input apphot/daophot databases(s)
+       fields = "XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR" Fields to be extracted
+         expr = "yes"           Boolean expression
+     (headers = no)             Print field headers?
+  (parameters = yes)            Print parameters?
+      (inlist = "")             
+        (mode = "ql")    
 
 
-#epar fitskypars
+Mayor información help phot
 
-#epar phot
+**calculo de la magnigud instrumental :
 
-#image @n3fits.lis
-#coords @n3coord.lis
-#datapar datapars
-#centerp centerpars
-#fitskyp fitskypars
-#photpar photpars
-
-#pdump  lo configuramos con salida XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR:
-
-#apphot> lpar pdump
-#      infiles = "*.mag.1"       Input apphot/daophot databases(s)
-#       fields = "XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR" Fields to be extracted
-#         expr = "yes"           Boolean expression
-#     (headers = no)             Print field headers?
-#  (parameters = yes)            Print parameters?
-#      (inlist = "")             
-#        (mode = "ql")    
-
-
-#Mayor información help phot
-
-#calculo de la magnigud instrumental :
-
-# flux = sum - area * msky
-#         mag = zmag - 2.5 * log10 (flux) + 2.5 * log10 (itime)
-#        merr = 1.0857 * err / flux
-#         err = sqrt (flux / epadu + area * stdev**2 + area**2 * stdev**2 / nsky)
-# flags de los errores
-#           No error
-#101       The centering box is off image
-#102       The centering box is partially off the image
-#103       The S/N ratio is low in the centering box
-#104       There are two few points for a good fit
-#105       The x or y center fit is singular
-#106       The x or y center fit did not converge
-#107       The x or y center shift is greater than maxshift
-#108       There is bad data in the centering box
+ flux = sum - area * msky
+         mag = zmag - 2.5 * log10 (flux) + 2.5 * log10 (itime)
+        merr = 1.0857 * err / flux
+         err = sqrt (flux / epadu + area * stdev**2 + area**2 * stdev**2 / nsky)
+ flags de los errores
+           No error
+101       The centering box is off image
+102       The centering box is partially off the image
+103       The S/N ratio is low in the centering box
+104       There are two few points for a good fit
+105       The x or y center fit is singular
+106       The x or y center fit did not converge
+107       The x or y center shift is greater than maxshift
+108       There is bad data in the centering box
 
 
 
