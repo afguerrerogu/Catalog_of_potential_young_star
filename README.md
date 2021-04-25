@@ -24,6 +24,7 @@ guion1.cl (author : G. pinzon).\
 This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
 before executing the script it is necessary to change the parameters in IRAF. these changes are specified as follows.
 we are going to do an aperture study so, we are going to change the aperture parameter (in line 97) from 8 to 15. In the last line we have to change the name of the output file for each aperture   
+Executing this file in IRAF whit >: cl < guion1.cl
 
 **configure IRAF**
 
@@ -55,9 +56,9 @@ cthresh 0\
 minsnra 1\
 cmaxite 10\
 
-**epar fitskypars**
+**epar fitskypars**\
 
-**epar phot**
+**epar phot**\
 
 image @n3fits.lis\
 coords @n3coord.lis\
@@ -68,7 +69,7 @@ photpar photpars\
 
 pdump  lo configuramos con salida XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR:
 
-**apphot> lpar pdump**
+**apphot> lpar pdump**\
         infiles = "*.mag.1"       Input apphot/daophot databases(s)\
        fields = "XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCENTER,MAG,MERR" Fields to be extracted\
          expr = "yes"           Boolean expression\
@@ -78,9 +79,9 @@ pdump  lo configuramos con salida XINIT,YINIT,IFILTER,OTIME,XAIRMASS,XCENTER,YCE
         (mode = "ql")    \
 
 
-Mayor información help phot
+Mayor información help phot\
 
-**calculo de la magnigud instrumental :**
+**calculo de la magnigud instrumental :**\
 
  flux = sum - area * msky\
          mag = zmag - 2.5 * log10 (flux) + 2.5 * log10 (itime)\
