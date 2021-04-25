@@ -18,7 +18,8 @@ This script will be used to obtain the magnitude of the stars in the standard sy
 
 
 
-# aperture study
+aperture study
+--
 guion1.cl (author : G. pinzon).\
 This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
 before executing the script it is necessary to change the parameters in IRAF. these changes are specified in the guion1.cl
