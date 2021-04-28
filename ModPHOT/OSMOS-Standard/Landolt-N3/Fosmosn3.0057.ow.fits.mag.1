@@ -1,0 +1,150 @@
+#K IRAF       = NOAO/IRAFV2.16.1        version    %-23s     
+#K USER       = andres                  name       %-23s     
+#K HOST       = Guerrero23cm            computer   %-23s     
+#K DATE       = 2021-04-25              yyyy-mm-dd %-23s     
+#K TIME       = 18:26:12                hh:mm:ss   %-23s     
+#K PACKAGE    = apphot                  name       %-23s     
+#K TASK       = phot                    name       %-23s     
+#
+#K SCALE      = 1.                      units      %-23.7g   
+#K FWHMPSF    = 4.                      scaleunit  %-23.7g   
+#K EMISSION   = yes                     switch     %-23b     
+#K DATAMIN    = INDEF                   counts     %-23.7g   
+#K DATAMAX    = INDEF                   counts     %-23.7g   
+#K EXPOSURE   = EXPTIME                 keyword    %-23s     
+#K AIRMASS    = AIRMASS                 keyword    %-23s     
+#K FILTER     = FILTID2                 keyword    %-23s     
+#K OBSTIME    = TIME-OBS                keyword    %-23s     
+#
+#K NOISE      = poisson                 model      %-23s     
+#K SIGMA      = 3.                      counts     %-23.7g   
+#K GAIN       = gain                    keyword    %-23s     
+#K EPADU      = 2.3                     e-/adu     %-23.7g   
+#K CCDREAD    = rdnoise                 keyword    %-23s     
+#K READNOISE  = 5.                      e-         %-23.7g   
+#
+#K CALGORITHM = centroid                algorithm  %-23s     
+#K CBOXWIDTH  = 10.                     scaleunit  %-23.7g   
+#K CTHRESHOLD = 0.                      sigma      %-23.7g   
+#K MINSNRATIO = 1.                      number     %-23.7g   
+#K CMAXITER   = 10                      number     %-23d     
+#K MAXSHIFT   = 1.                      scaleunit  %-23.7g   
+#K CLEAN      = no                      switch     %-23b     
+#K RCLEAN     = 1.                      scaleunit  %-23.7g   
+#K RCLIP      = 2.                      scaleunit  %-23.7g   
+#K KCLEAN     = 3.                      sigma      %-23.7g   
+#
+#K SALGORITHM = centroid                algorithm  %-23s     
+#K ANNULUS    = 10.                     scaleunit  %-23.7g   
+#K DANNULUS   = 5.                      scaleunit  %-23.7g   
+#K SKYVALUE   = 0.                      counts     %-23.7g   
+#K KHIST      = 3.                      sigma      %-23.7g   
+#K BINSIZE    = 0.1                     sigma      %-23.7g   
+#K SMOOTH     = no                      switch     %-23b     
+#K SMAXITER   = 10                      number     %-23d     
+#K SLOCLIP    = 0.                      percent    %-23.7g   
+#K SHICLIP    = 0.                      percent    %-23.7g   
+#K SNREJECT   = 50                      number     %-23d     
+#K SLOREJECT  = 3.                      sigma      %-23.7g   
+#K SHIREJECT  = 3.                      sigma      %-23.7g   
+#K RGROW      = 0.                      scaleunit  %-23.7g   
+#
+#K WEIGHTING  = constant                model      %-23s     
+#K APERTURES  = 15                      scaleunit  %-23s     
+#K ZMAG       = 25.                     zeropoint  %-23.7g   
+#
+#N IMAGE               XINIT     YINIT     ID    COORDS                 LID    \
+#U imagename           pixels    pixels    ##    filename               ##     \
+#F %-23s               %-10.3f   %-10.3f   %-6d  %-23s                  %-6d    
+#
+#N XCENTER    YCENTER    XSHIFT  YSHIFT  XERR    YERR            CIER CERROR   \
+#U pixels     pixels     pixels  pixels  pixels  pixels          ##   cerrors  \
+#F %-14.3f    %-11.3f    %-8.3f  %-8.3f  %-8.3f  %-15.3f         %-5d %-9s      
+#
+#N MSKY           STDEV          SSKEW          NSKY   NSREJ     SIER SERROR   \
+#U counts         counts         counts         npix   npix      ##   serrors  \
+#F %-18.7g        %-15.7g        %-15.7g        %-7d   %-9d      %-5d %-9s      
+#
+#N ITIME          XAIRMASS       IFILTER                OTIME                  \
+#U timeunit       number         name                   timeunit               \
+#F %-18.7g        %-15.7g        %-23s                  %-23s                   
+#
+#N RAPERT   SUM           AREA       FLUX          MAG    MERR   PIER PERROR   \
+#U scale    counts        pixels     counts        mag    mag    ##   perrors  \
+#F %-12.2f  %-14.7g       %-11.7g    %-14.7g       %-7.3f %-6.3f %-5d %-9s      
+#
+Fosmosn3.0057.ow.fits  1936.159  646.207   1     Fosmosn3.0057.ow.fits.c1      \
+   1942.211   649.843    6.052   3.636   0.008   0.009          107  BigShift  \
+   50.19131       5.108941       1.726313       390    1        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    66513.63      707.095    31023.6       15.518 0.009 0    NoError    
+Fosmosn3.0057.ow.fits  1854.204  737.751   2     Fosmosn3.0057.ow.fits.c2      \
+   1865.460   738.407    11.256  0.656   0.006   0.006          107  BigShift  \
+   51.07594       5.139267       -0.9782466     395    1        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    98123.88      706.7816   62024.34      14.766 0.005 0    NoError    
+Fosmosn3.0057.ow.fits  1771.443  502.294   3     Fosmosn3.0057.ow.fits.c3      \
+   1766.458   505.236    -4.985  2.942   0.004   0.004          107  BigShift  \
+   55.0797        5.837018       2.590667       389    3        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    223375.6      707.2167   184422.3      13.583 0.002 0    NoError    
+Fosmosn3.0057.ow.fits  1580.908  996.008   4     Fosmosn3.0057.ow.fits.c4      \
+   1575.621   997.197    -5.287  1.189   0.167   0.189          107  BigShift  \
+   50.44625       4.780001       1.740802       391    3        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    35215.85      707.1781   -458.6369     INDEF  INDEF 0    NoError    
+Fosmosn3.0057.ow.fits  1470.238  552.363   5     Fosmosn3.0057.ow.fits.c5      \
+   1471.487   548.392    1.249   -3.971  0.205   0.149          107  BigShift  \
+   49.99118       4.806456       -2.068319      391    4        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    34976.18      706.7736   -356.2721     INDEF  INDEF 0    NoError    
+Fosmosn3.0057.ow.fits  1360.923  656.763   6     Fosmosn3.0057.ow.fits.c6      \
+   1377.888   655.898    16.965  -0.865  0.005   0.005          107  BigShift  \
+   52.16198       5.389198       2.332998       388    2        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    138232.6      706.9987   101354.1      14.233 0.003 0    NoError    
+Fosmosn3.0057.ow.fits  1142.835  1082.955  7     Fosmosn3.0057.ow.fits.c7      \
+   1145.892   1084.518   3.057   1.563   0.158   0.122          107  BigShift  \
+   50.33986       5.162685       -1.53457       390    2        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    35565.06      707.3603   -43.3587      INDEF  INDEF 0    NoError    
+Fosmosn3.0057.ow.fits  1060.648  1079.506  8     Fosmosn3.0057.ow.fits.c8      \
+   1053.962   1079.070   -6.686  -0.436  0.011   0.011          107  BigShift  \
+   50.11015       4.501095       0.9720492      379    14       0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    53097.28      706.9797   17670.42      16.129 0.014 0    NoError    
+Fosmosn3.0057.ow.fits  868.638   975.856   9     Fosmosn3.0057.ow.fits.c9      \
+   871.656    973.905    3.018   -1.951  0.002   0.002          107  BigShift  \
+   67.85169       9.66602        5.912232       364    28       0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    694562.3      707.2185   646576.4      12.221 0.001 0    NoError    
+Fosmosn3.0057.ow.fits  539.172   677.081   10    Fosmosn3.0057.ow.fits.c10     \
+   550.334    679.173    11.162  2.092   0.008   0.009          107  BigShift  \
+   50.296         5.338552       1.800126       389    4        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    66353.02      707.2239   30782.49      15.527 0.009 0    NoError    
+Fosmosn3.0057.ow.fits  487.305   1840.900  11    Fosmosn3.0057.ow.fits.c11     \
+   494.347    1841.665   7.042   0.765   0.009   0.010          107  BigShift  \
+   50.29613       4.939981       -1.650409      390    3        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    63567.97      707.0864   28004.26      15.629 0.010 0    NoError    
+Fosmosn3.0057.ow.fits  432.438   1808.154  12    Fosmosn3.0057.ow.fits.c12     \
+   430.618    1808.315   -1.820  0.161   0.012   0.013          107  BigShift  \
+   49.13165       5.026725       2.741714       390    1        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    50287.12      707.0426   15548.95      16.268 0.017 0    NoError    
+Fosmosn3.0057.ow.fits  346.488   306.718   13    Fosmosn3.0057.ow.fits.c13     \
+   343.095    307.619    -3.393  0.901   0.007   0.008          107  BigShift  \
+   51.36399       5.322948       2.478173       387    9        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    79024.85      707.3144   42694.36      15.171 0.007 0    NoError    
+Fosmosn3.0057.ow.fits  321.147   1123.374  14    Fosmosn3.0057.ow.fits.c14     \
+   336.202    1121.017   15.055  -2.357  0.002   0.002          107  BigShift  \
+   62.17965       7.94288        5.068378       383    9        0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    493681.4      706.9553   449723.2      12.615 0.001 0    NoError    
+Fosmosn3.0057.ow.fits  44.932    217.961   15    Fosmosn3.0057.ow.fits.c15     \
+   62.036     221.430    17.104  3.469   0.002   0.002          107  BigShift  \
+   55.96898       24.30791       15.88087       380    11       0    NoError   \
+   5.             1.22552        R                      03:19:37.640           \
+   15.00    522351.       707.4793   482754.1      12.538 0.003 0    NoError    
