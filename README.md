@@ -16,6 +16,9 @@ this script rewrites the first two lines of the .coord file to the new .coo file
 guion1.cl (author : G. pinzon).\
 This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
 
+sed_INDEF.SH\\
+this scrip removes all lines whose magnitude result is 'INDEF'.
+
 
 
 aperture study
