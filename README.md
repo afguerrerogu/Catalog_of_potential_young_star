@@ -13,7 +13,7 @@ this script is for making a mach between the stars in the images with the 2mass 
 tophot.sh\
 this script rewrites the first two lines of the .coord file to the new .coo file. this is needed to do the photometry in IRAF
 
-guion1.cl (author : G. pinzon).\
+Standard_magnitude (author : G. pinzon).\
 This script will be used to obtain the magnitude of the stars in the standard system of the OSMOS field of LDN1588.
 
 sed_INDEF.SH\\
