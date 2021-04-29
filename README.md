@@ -110,25 +110,25 @@ Mayor información help phot\
 
 characterize night 3
 --
-PACKAGE = photcal
-   TASK = fitparams
+PACKAGE = photcal\
+   TASK = fitparams\
     
-observat=             standobs  List of observations files
-catalogs=         nlandolt.dat  List of standard catalog files
-config  =               config  Configuration file
-paramete=               params  Output parameters file
-(weighti=              uniform) Weighting type (uniform,photometric,equations)
-(addscat=                  yes) Add a scatter term to the weights ?
-(toleran=   3.0000000000000E-5) Fit convergence tolerance
-(maxiter=                   15) Maximum number of fit iterations
-(nreject=                    2) Number of rejection iterations
-(low_rej=                   3.) Low sigma rejection factor
-(high_re=                   3.) High sigma rejection factor
-(grow   =                   0.) Rejection growing radius
-(interac=                  yes) Solve fit interactively ?
-(logfile=               STDOUT) Output log file
-(log_unm=                  yes) Log any unmatched stars ?
-(log_fit=                   no) Log the fit parameters and statistics ?
+observat=             standobs  List of observations files\
+catalogs=         nlandolt.dat  List of standard catalog files\
+config  =               config  Configuration file\
+paramete=               params  Output parameters file\
+(weighti=              uniform) Weighting type (uniform,photometric,equations)\
+(addscat=                  yes) Add a scatter term to the weights ?\
+(toleran=   3.0000000000000E-5) Fit convergence tolerance\
+(maxiter=                   15) Maximum number of fit iterations\
+(nreject=                    2) Number of rejection iterations\
+(low_rej=                   3.) Low sigma rejection factor\
+(high_re=                   3.) High sigma rejection factor\
+(grow   =                   0.) Rejection growing radius\
+(interac=                  yes) Solve fit interactively ?\
+(logfile=               STDOUT) Output log file\
+(log_unm=                  yes) Log any unmatched stars ?\
+(log_fit=                   no) Log the fit parameters and statistics ?\
 
 after digit :go
 
