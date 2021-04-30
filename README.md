@@ -158,10 +158,51 @@ imsets  =                imset  The output image set file\
 
 :go
 
+NOTE: when doing epar mkimset on science stars L, you have a problem, you must remove tow medias for each filter.
+
 and you have to save the files with :wq. and then you have an imset file and obs
 
 now, we execute in IRAF:
 > cl < guion2.cl
+
+we have the scienceobsN3S file, this file has the magnitude of the stars.
+we must run the imvertfit task to invert the magnitudes, this uses the params file we did before.
+
+> epar invertfit
+
+PACKAGE = photcal\
+   TASK = invertfit\
+
+observat=        scienceobsN3S  List of observations files\
+config  =               config  Configuration file\
+paramete=               params  Fitted parameters file\
+calib   =      sciencecalibN3S  Output calibrated standard indices file\
+(catalog=                     ) List of standard catalog files\
+(errors =            obserrors) Error computation type (undefined,obserrors,equa\
+(objects=                  all) Objects to be fit (all,program,standards)\
+(print  =                     ) Optional list of variables to print\
+(format =                     ) Optional output format string\
+(append =                   no) Append output to an existing file ?\
+(catdir =            )_.catdir) The standard star catalog directory\
+(mode   =                   ql)\
+
+:go
+
+and then, in the terminal, execute:
+
+> sed -i "1,19d" sciencecalibN3S 
+> sed -i '/INDEF/d' sciencecalibN3S
+> sed -i '1i #ID V err_V V-R err_V-R V-I err_V-I' sciencecalibN3S 
+
+Finally, we have the file sciencecalibN3S, this file contains the magnitudes of the science stars on night 3 short.
+we must do the same for the science stars of night 3 large.
+we will move these files to a new directory for the analysis
+
+Analysis
+--
+*
+
+
 
 
 
