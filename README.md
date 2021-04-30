@@ -190,9 +190,9 @@ calib   =      sciencecalibN3S  Output calibrated standard indices file\
 
 and then, in the terminal, execute:
 
-> sed -i "1,19d" sciencecalibN3S 
-> sed -i '/INDEF/d' sciencecalibN3S
-> sed -i '1i #ID V err_V V-R err_V-R V-I err_V-I' sciencecalibN3S 
+> sed -i "1,19d" sciencecalibN3S \
+> sed -i '/INDEF/d' sciencecalibN3S\
+> sed -i '1i #ID V err_V V-R err_V-R V-I err_V-I' sciencecalibN3S\ 
 
 Finally, we have the file sciencecalibN3S, this file contains the magnitudes of the science stars on night 3 short.
 we must do the same for the science stars of night 3 large.
