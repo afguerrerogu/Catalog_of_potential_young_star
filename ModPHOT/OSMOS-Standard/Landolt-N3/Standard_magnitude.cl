@@ -16,7 +16,7 @@ del tmp*
 del *mag.1
 
 # Calculamos las magnitudes instrumentales
-phot @fits.lis coords=@fits-coord.lis  sigma=3.0 readnoi=5.0 epadu=2.3  fwhmpsf=4 itime=1 xairmas=1  annulus=10 dannulu=5 apertur=15 interac=no
+phot @fits.lis coords=@fits-coord.lis  sigma=3.0 readnoi=5.0 epadu=2.3  fwhmpsf=4 itime=1 xairmas=1  annulus=10 dannulu=5 apertur=12 interac=no
 
 
 # flux = sum - area * msky
@@ -38,4 +38,4 @@ noao
 
 apphot
 
-pdump > magnitude_aper15.data
+pdump > magnitude_aper12.data

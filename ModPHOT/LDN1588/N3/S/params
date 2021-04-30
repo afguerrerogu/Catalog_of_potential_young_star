@@ -1,0 +1,612 @@
+# Wed 21:19:06 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.01679933
+	stdeviation	0.1296122
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.01679933
+	msq		0.01642875
+	rms		0.1281747
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.8254013
+		0.16925
+		0.00502363
+		0.
+	errors	4
+		0.06578358
+		0.04004125
+		0.02457849
+		0.
+
+# Wed 21:32:39 28-Apr-2021
+begin	RFIT
+	status	0	(Solution converged)
+	variance	0.09881232
+	stdeviation	0.3143443
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.09881232
+	msq		0.09676793
+	rms		0.3110754
+	reference	mR
+	fitting		(V-VR)+r1+r2*XR+r3*VR+r4*VR*XR
+	weights		uniform
+	parameters	4
+		r1	(fit)
+		r2	(fit)
+		r3	(fit)
+		r4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.059636
+		0.01430548
+		-0.3278132
+		0.
+	errors	4
+		0.1454083
+		0.09304027
+		0.05109334
+		0.
+
+# Wed 21:33:21 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564654
+	stdeviation	0.6756222
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564654
+	msq		0.447515
+	rms		0.6689656
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.06
+		0.3942862
+		-0.5393445
+		0.
+	errors	4
+		0.3015679
+		0.1933777
+		0.05940116
+		0.
+
+# Wed 21:35:45 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	6.387100E-4
+	stdeviation	0.02527271
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		6.387100E-4
+	msq		6.245165E-4
+	rms		0.02499033
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.8674138
+		0.1486453
+		-0.02283747
+		0.
+	errors	4
+		0.01249554
+		0.007756508
+		0.004476917
+		0.
+
+# Wed 21:35:50 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015772
+		0.1933814
+		0.05940145
+		0.
+
+# Wed 21:35:51 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:35:52 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:35:53 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:35:54 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:35:59 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:36:02 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	0.4564655
+	stdeviation	0.6756223
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.4564655
+	msq		0.4475151
+	rms		0.6689657
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.060002
+		0.3942855
+		-0.5393437
+		0.
+	errors	4
+		0.3015719
+		0.1933801
+		0.05940125
+		0.
+
+# Wed 21:38:33 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	6.387055E-4
+	stdeviation	0.02527262
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		6.387055E-4
+	msq		6.245120E-4
+	rms		0.02499024
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.8672276
+		0.148761
+		-0.02282587
+		0.
+	errors	4
+		0.0124955
+		0.007756483
+		0.004476897
+		0.
+
+# Wed 21:42:58 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	6.387055E-4
+	stdeviation	0.02527262
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		6.387055E-4
+	msq		6.245120E-4
+	rms		0.02499024
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.8672276
+		0.148761
+		-0.02282587
+		0.
+	errors	4
+		0.0124955
+		0.007756483
+		0.004476897
+		0.
+
+# Wed 21:43:01 28-Apr-2021
+begin	RFIT
+	status	0	(Solution converged)
+	variance	7.106564E-4
+	stdeviation	0.02665814
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		7.106564E-4
+	msq		6.949801E-4
+	rms		0.02636248
+	reference	mR
+	fitting		(V-VR)+r1+r2*XR+r3*VR+r4*VR*XR
+	weights		uniform
+	parameters	4
+		r1	(fit)
+		r2	(fit)
+		r3	(fit)
+		r4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.6955201
+		0.1279881
+		-0.008358645
+		0.
+	errors	4
+		0.01302638
+		0.008084363
+		0.008083606
+		0.
+
+# Wed 21:47:21 28-Apr-2021
+begin	VFIT
+	status	0	(Solution converged)
+	variance	6.387055E-4
+	stdeviation	0.02527262
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		6.387055E-4
+	msq		6.245120E-4
+	rms		0.02499024
+	reference	mV
+	fitting		V+v1+v2*XV+v3*VI+v4*VI*XV
+	weights		uniform
+	parameters	4
+		v1	(fit)
+		v2	(fit)
+		v3	(fit)
+		v4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.8672276
+		0.148761
+		-0.02282587
+		0.
+	errors	4
+		0.0124955
+		0.007756483
+		0.004476897
+		0.
+
+# Wed 21:47:23 28-Apr-2021
+begin	RFIT
+	status	0	(Solution converged)
+	variance	7.106564E-4
+	stdeviation	0.02665814
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		7.106564E-4
+	msq		6.949801E-4
+	rms		0.02636248
+	reference	mR
+	fitting		(V-VR)+r1+r2*XR+r3*VR+r4*VR*XR
+	weights		uniform
+	parameters	4
+		r1	(fit)
+		r2	(fit)
+		r3	(fit)
+		r4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		0.6955201
+		0.1279881
+		-0.008358645
+		0.
+	errors	4
+		0.01302638
+		0.008084363
+		0.008083606
+		0.
+
+# Wed 21:47:25 28-Apr-2021
+begin	IFIT
+	status	0	(Solution converged)
+	variance	0.001060977
+	stdeviation	0.03257264
+	avsqerror	1.
+	averror		1.
+	avsqscatter	0.
+	avscatter	0.
+	chisqr		0.001060977
+	msq		0.001034672
+	rms		0.03216632
+	reference	mI
+	fitting		(V-VI)+i1+i2*XI+i3*VI+i4*VI*XI
+	weights		uniform
+	parameters	4
+		i1	(fit)
+		i2	(fit)
+		i3	(fit)
+		i4	(constant)
+	derivatives	4
+		0.1
+		0.1
+		0.1
+		0.1
+	values	4
+		1.647748
+		0.04999715
+		0.02345379
+		0.
+	errors	4
+		0.01728466
+		0.0107434
+		0.00612541
+		0.
+
