@@ -132,5 +132,39 @@ paramete=               params  Output parameters file\
 
 after digit :go
 
+magnitude of the scientific stars
+--
+
+Once we have the characterization of night 3 with the optimal aperture of the data, we are going to obtain the magnitudes of the scientific stars, for this we are going to execute in IRAF: > cl < script2.cl, we must modify this file with the optimal aperture for these stars. but before, we must make the imset file with IRAF, as follows: 
+
+> epar mkimset
+
+PACKAGE = photcal\
+   TASK = mkimsets\
+
+imlist  =              *.mag.1  The input image list\
+idfilter=                V,R,I  The list of filter ids\
+imsets  =                imset  The output image set file\
+(imobspa=                  obs) The output image observing parameters file\
+(input  =            photfiles) The source of the input image list\
+(filter =              filtid2) The filter keyword\
+(fields =                     ) Additional image list fields\
+(sort   =                     ) The image list field to be sorted on\
+(edit   =                  yes) Edit the input image list before grouping\
+(rename =                  yes) Prompt the user for image set names\
+(review =                  yes) Review the image set file with the editor\
+(list   =                     )\
+(mode   =                   ql)\
+
+:go
+
+and you have to save the files with :wq. and then you have an imset file and obs
+
+now, we execute in IRAF:
+> cl < guion2.cl
+
+
+
+
 
 
