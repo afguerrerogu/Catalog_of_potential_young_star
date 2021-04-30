@@ -201,7 +201,17 @@ we will move these files to a new directory for the analysis
 
 Analysis
 --
-*
+in the Analysis directory should be the files sciencecalibN3, and the theoretical files zamsvr. let's analyze this with analysis.py.
+> analysis.py
+1. first let's read the files
+ 2. define the constants:
+- extinction coefficient
+- distance
+3. calculate the absolute magnitudes 
+4. We make the figures 
+5. eliminate the measurements whose error is greater than 0.5
+6. using the error diagram we define which magnitude we are going to use for the short and large exposure 
+
 
 
 
