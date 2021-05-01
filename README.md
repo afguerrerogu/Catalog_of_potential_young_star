@@ -216,6 +216,8 @@ in the Analysis directory should be the files sciencecalibN3, and the theoretica
 
 
 > young_stars.py\
+
+
 1.we first construct the third-degree polynomial approximations for the theoretical curve\
 2.we calculate the differences on the y-axis between the points and the polynomial\
 3.tomamos solo los puntos en que las diferencias sean mayores a 0\
