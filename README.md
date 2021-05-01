@@ -201,7 +201,7 @@ we will move these files to a new directory for the analysis
 
 Analysis
 --
-in the Analysis directory should be the files sciencecalibN3, and the theoretical files zamsvr. let's analyze this with analysis.py.
+in the Analysis directory should be the files sciencecalibN3, and the theoretical files zamsvr. let's analyze this with.
 > analysis.py
 1. first let's read the files
  2. define the constants:
@@ -215,7 +215,11 @@ in the Analysis directory should be the files sciencecalibN3, and the theoretica
 
 
 
-
+> young_stars.py
+1.we first construct the third-degree polynomial approximations for the theoretical curve
+2.we calculate the differences on the y-axis between the points and the polynomial
+3.tomamos solo los puntos en que las diferencias sean mayores a 0
+4.export the catalog to a .csv file
 
 
 
