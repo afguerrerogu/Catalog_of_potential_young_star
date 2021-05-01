@@ -211,7 +211,7 @@ in the Analysis directory should be the files sciencecalibN3, and the theoretica
 4. We make the figures 
 5. eliminate the measurements whose error is greater than 0.5
 6. using the error diagram we define which magnitude we are going to use for the short and large exposure 
-
+7.Finally, we join the two catalogs and export them in a .csv file. 
 
 
 
