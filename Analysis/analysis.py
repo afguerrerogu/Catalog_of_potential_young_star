@@ -16,6 +16,8 @@ from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 # Leemos los archivos
 teo_VI = pd.read_csv('zamsvi',sep=' ',index_col=None, names=["V-I","Mag"] )
 teo_VR = pd.read_csv('zamsvr',sep=' ',index_col=None, names=["V-R","Mag"] )
+teoricas = np.loadtxt('zams_explained.dat', usecols=(9,10,12,14,15),)
+teoricas = pd.DataFrame(teoricas,columns=["V-R","V-I","Mv","Mr","Mi"])
 sciencecalibN3L = np.loadtxt('sciencecalibN3L',dtype='str')
 sciencecalibN3S = np.loadtxt('sciencecalibN3S',dtype='str')
 sciencecalibN3L = pd.DataFrame(sciencecalibN3L,columns=["ID","V","e_V","V-R","e_V-R","V-I","e_V-I"])
@@ -34,6 +36,8 @@ sciencecalibN3S['V-R'] = pd.to_numeric(sciencecalibN3S['V-R'])
 sciencecalibN3S['e_V-R'] = pd.to_numeric(sciencecalibN3S['e_V-R'])
 sciencecalibN3S['V-I'] = pd.to_numeric(sciencecalibN3S['V-I'])
 sciencecalibN3S['e_V-I'] = pd.to_numeric(sciencecalibN3S['e_V-I'])
+
+teoricas["R-I"] = teoricas["Mr"] - teoricas["Mi"] 
 
 
 #definimos constantes
@@ -58,10 +62,10 @@ sciencecalibN3S['abs(V-R)'] = sciencecalibN3S['V-R'] + A_v-A_r
 sciencecalibN3S['abs(R-I)'] = sciencecalibN3S['abs(V-I)'] - sciencecalibN3S['abs(V-R)']  
 
 
-plt.figure(1,figsize=(8,8))
-plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='indigo',label="V-I")
-plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="S")
-plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],c='b',s=0.5,marker='o',label="L")
+plt.figure(1,figsize=(7,7))
+plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='red',label="V - I")
+plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
+plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - I")
 plt.ylabel(r"V")
@@ -70,22 +74,31 @@ plt.savefig("VvsV-I.png")
 
 
 plt.figure(2,figsize=(8,8))
-plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='indigo',label="V-R")
-plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="S")
-plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='b',s=0.5,marker='o',label="L")
+plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='red',label="V - R")
+plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
+plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - R")
 plt.ylabel(r"V")
 plt.legend()
 plt.savefig("VvsV-R.png")
 
+plt.figure(3,figsize=(8,8))
+plt.plot(teoricas['R-I'],teoricas['Mv'],c='red',label="R - I")
+plt.scatter(sciencecalibN3S['abs(R-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
+plt.scatter(sciencecalibN3L['abs(R-I)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
+plt.ylim((18,-2.5))
+plt.xlabel(r" R - I")
+plt.ylabel(r"V")
+plt.legend()
+plt.savefig("VvsR-I.png")
 
-plt.figure(3,figsize=(15,8))
-plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='indigo',label="V-I")
+plt.figure(4,figsize=(15,8))
 plt.errorbar(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],
-             xerr=sciencecalibN3S['e_V-I'],c='k' , fmt='.')
+             xerr=sciencecalibN3S['e_V-I'],c='gray' , fmt='.')
 plt.errorbar(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],
-             xerr=sciencecalibN3L['e_V-I'],c='b',fmt='o')
+             xerr=sciencecalibN3L['e_V-I'],c='gray',fmt='o')
+plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='lime',label="V-I")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - R")
 plt.ylabel(r"V") 
@@ -95,7 +108,7 @@ plt.savefig("barerr.png")
 # Figura de los errores
 
 
-fig,ax = plt.subplots(figsize=(8,8))
+fig,ax = plt.subplots(figsize=(7,7))
 ax.scatter(sciencecalibN3S['abs(V)'],sciencecalibN3S['e_V'],c='k',marker='*',label= 'S',s=5)
 ax.scatter(sciencecalibN3L['abs(V)'],sciencecalibN3L['e_V'],c='r', marker='o',label= 'L',s=5)
 ax.legend()
@@ -131,7 +144,7 @@ sciencecalibN3S = sciencecalibN3S[(sciencecalibN3S['e_V'] <= 0.5) & (sciencecali
 sciencecalibN3S = sciencecalibN3S[sciencecalibN3S['abs(V)']<9]
 sciencecalibN3L = sciencecalibN3L[sciencecalibN3L['abs(V)']>9]
 
-plt.figure(5,figsize=(15,8))
+plt.figure(6,figsize=(15,8))
 plt.scatter(sciencecalibN3S['abs(V)'],sciencecalibN3S['e_V'],c='k',marker='*',label= 'S',s=5)
 plt.scatter(sciencecalibN3L['abs(V)'],sciencecalibN3L['e_V'],c='r', marker='o',label= 'L',s=5)
 plt.xlabel(r"V")
@@ -141,26 +154,38 @@ plt.ylabel(r"error V")
 
 catalog = sciencecalibN3S.append(sciencecalibN3L)
 
-plt.figure(6,figsize=(8,8))
-plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='indigo',label="V-I")
-plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="S")
-plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],c='red',s=1,marker='o',label="L")
-plt.scatter(catalog['abs(V-I)'],catalog['abs(V)'], color='green',s=0.1,label="MATCH")
+plt.figure(7,figsize=(8,8))
+plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='maroon',label="V-I")
+plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
+plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],s=5,c='gray',marker='o',label="L")
+plt.scatter(catalog['abs(V-I)'],catalog['abs(V)'], color='k',s=0.1,label="MATCH")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - I")
 plt.ylabel(r"V")
 plt.legend()
 plt.savefig("matchV-I.png")
 
-plt.figure(7,figsize=(8,8))
-plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='indigo',label="V-R")
-plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="S")
-plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='red',s=1,marker='o',label="L")
-plt.scatter(catalog['abs(V-R)'],catalog['abs(V)'], color='green',s=0.1,label="MATCH")
+plt.figure(8,figsize=(8,8))
+plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='maroon',label="V-R")
+plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
+plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='gray',s=1,marker='o',label="L")
+plt.scatter(catalog['abs(V-R)'],catalog['abs(V)'], color='k',s=0.1,label="MATCH")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - R")
 plt.ylabel(r"V")
 plt.legend()
 plt.savefig("matchV-R.png")
+
+plt.figure(9,figsize=(8,8))
+plt.plot(teoricas['R-I'],teoricas['Mv'],c='maroon',label="R-I")
+plt.scatter(sciencecalibN3S['abs(R-I)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
+plt.scatter(sciencecalibN3L['abs(R-I)'],sciencecalibN3L['abs(V)'],c='gray',s=1,marker='o',label="L")
+plt.scatter(catalog['abs(R-I)'],catalog['abs(V)'], color='k',s=0.1,label="MATCH")
+plt.ylim((18,-2.5))
+plt.xlabel(r"R - I")
+plt.ylabel(r"V")
+plt.legend()
+plt.savefig("matchR-I.png")
+
 
 catalog.to_csv('new_catalog.dat')
