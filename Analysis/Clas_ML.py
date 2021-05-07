@@ -49,7 +49,7 @@ plt.hist(predictions ,density=False, histtype='bar', rwidth=0.9, bins=2,color="k
 plt.hist(test_resul, density=False, histtype='bar', rwidth=0.2,bins=2,color='darkblue',label="test result")
 plt.plot(x,y,'--', color="red")
 plt.annotate(r"young", (0.4,200),bbox=bbox)
-plt.annotate(r"not young", (-0.6,340),bbox=bbox)
+plt.annotate(r"not young", (-0.65,200),bbox=bbox)
 plt.xticks(visible=False)
 plt.legend()
 plt.savefig("histo.png")

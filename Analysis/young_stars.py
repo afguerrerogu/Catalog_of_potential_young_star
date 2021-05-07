@@ -15,6 +15,7 @@ teo_VI = pd.read_csv('zamsvi',sep=' ',index_col=None, names=["V-I","Mag"] )
 teo_VR = pd.read_csv('zamsvr',sep=' ',index_col=None, names=["V-R","Mag"] )
 teoricas = np.loadtxt('zams_explained.dat', usecols=(9,10,12,14,15),)
 teoricas = pd.DataFrame(teoricas,columns=["V-R","V-I","Mv","Mr","Mi"])
+teoricas["R-I"] = teoricas["Mr"] - teoricas["Mi"]
 
 
 # CONSTRUIMOS EL POLINOMIO PARA V-I
@@ -63,14 +64,15 @@ plt.ylim((19,-2.5))
 plt.savefig("ecuVR.png")
 
 # CONSTRUIMOS EL POLINOMIO PARA R-I
-Data_train_RI = teoricas["V-R"].tolist()
+
+Data_train_RI = teoricas["R-I"].tolist()
 resul_train_RI = teoricas["Mv"].tolist()
 
 x_RI = np.linspace(min(Data_train_RI),max(Data_train_RI),1001)
 
 coef_RI = np.polyfit(Data_train_RI, resul_train_RI,3)
 ecu_RI = np.poly1d(coef_RI)
-yvals_RI = ecu_VR(x_RI)
+yvals_RI= ecu_RI(x_RI)
 
 print ("ecuacion polinomica para R-I: \n" , ecu_RI)
 
@@ -81,14 +83,15 @@ plt.scatter(data["abs(R-I)"],data["abs(V)"],color="gray",s=60)
 plt.xlabel("R - I")
 plt.ylabel("V")
 plt.legend()
-plt.ylim((18,-2.5))
+plt.ylim((19,-2.5))
 plt.savefig("ecuRI.png")
+
 
 #medimos la diferencia de cada punto al polinomio
 
 data["dif_VI"] = ecu_VI(data["abs(V-I)"]) - data["abs(V)"]
 data["dif_VR"] = ecu_VR(data["abs(V-R)"]) - data["abs(V)"]
-data["dif_RI"] = ecu_VR(data["abs(R-I)"]) - data["abs(V)"]
+data["dif_RI"] = ecu_RI(data["abs(R-I)"]) - data["abs(V)"]
 
 #Tomoamos solo los datos que la dif sea positiva
 
@@ -134,6 +137,8 @@ plt.xlim((-0.5,3))
 plt.savefig("young_RI.png")
 
 Catalogo.to_csv('Catalogo_de_estrellas_jovenes.dat')
+
+
 
 
 """necesario para el siguente paso"""
