@@ -62,7 +62,7 @@ sciencecalibN3S['abs(V-R)'] = sciencecalibN3S['V-R'] + A_v-A_r
 sciencecalibN3S['abs(R-I)'] = sciencecalibN3S['abs(V-I)'] - sciencecalibN3S['abs(V-R)']  
 
 
-plt.figure(1,figsize=(7,7))
+plt.figure(1)
 plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='red',label="V - I")
 plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
 plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
@@ -73,7 +73,7 @@ plt.legend()
 plt.savefig("VvsV-I.png")
 
 
-plt.figure(2,figsize=(8,8))
+plt.figure(2)
 plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='red',label="V - R")
 plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
 plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
@@ -83,7 +83,7 @@ plt.ylabel(r"V")
 plt.legend()
 plt.savefig("VvsV-R.png")
 
-plt.figure(3,figsize=(8,8))
+plt.figure(3)
 plt.plot(teoricas['R-I'],teoricas['Mv'],c='red',label="R - I")
 plt.scatter(sciencecalibN3S['abs(R-I)'],sciencecalibN3S['abs(V)'],c='k',marker='*',label="Short")
 plt.scatter(sciencecalibN3L['abs(R-I)'],sciencecalibN3L['abs(V)'],c='gray',s=0.5,marker='o',label="Large")
@@ -93,11 +93,11 @@ plt.ylabel(r"V")
 plt.legend()
 plt.savefig("VvsR-I.png")
 
-plt.figure(4,figsize=(15,8))
+plt.figure(4)
 plt.errorbar(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],
              xerr=sciencecalibN3S['e_V-I'],c='gray' , fmt='.')
 plt.errorbar(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],
-             xerr=sciencecalibN3L['e_V-I'],c='gray',fmt='o')
+             xerr=sciencecalibN3L['e_V-I'],yerr=sciencecalibN3L['e_V'],c='gray',fmt='o')
 plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='lime',label="V-I")
 plt.ylim((19,-2.5))
 plt.xlabel(r"V - R")
@@ -108,7 +108,7 @@ plt.savefig("barerr.png")
 # Figura de los errores
 
 
-fig,ax = plt.subplots(figsize=(7,7))
+fig,ax = plt.subplots()
 ax.scatter(sciencecalibN3S['abs(V)'],sciencecalibN3S['e_V'],c='k',marker='*',label= 'S',s=5)
 ax.scatter(sciencecalibN3L['abs(V)'],sciencecalibN3L['e_V'],c='r', marker='o',label= 'L',s=5)
 ax.legend()
@@ -144,7 +144,7 @@ sciencecalibN3S = sciencecalibN3S[(sciencecalibN3S['e_V'] <= 0.5) & (sciencecali
 sciencecalibN3S = sciencecalibN3S[sciencecalibN3S['abs(V)']<9]
 sciencecalibN3L = sciencecalibN3L[sciencecalibN3L['abs(V)']>9]
 
-plt.figure(6,figsize=(15,8))
+plt.figure(6)
 plt.scatter(sciencecalibN3S['abs(V)'],sciencecalibN3S['e_V'],c='k',marker='*',label= 'S',s=5)
 plt.scatter(sciencecalibN3L['abs(V)'],sciencecalibN3L['e_V'],c='r', marker='o',label= 'L',s=5)
 plt.xlabel(r"V")
@@ -153,8 +153,10 @@ plt.ylabel(r"error V")
 
 
 catalog = sciencecalibN3S.append(sciencecalibN3L)
+prueba = pd.merge(left=sciencecalibN3S ,right=sciencecalibN3L, left_on='ID', right_on='ID')
 
-plt.figure(7,figsize=(8,8))
+
+plt.figure(7)
 plt.plot(teo_VI['V-I'],teo_VI['Mag'],c='maroon',label="V-I")
 plt.scatter(sciencecalibN3S['abs(V-I)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
 plt.scatter(sciencecalibN3L['abs(V-I)'],sciencecalibN3L['abs(V)'],s=5,c='gray',marker='o',label="L")
@@ -165,7 +167,7 @@ plt.ylabel(r"V")
 plt.legend()
 plt.savefig("matchV-I.png")
 
-plt.figure(8,figsize=(8,8))
+plt.figure(8)
 plt.plot(teo_VR['V-R'],teo_VR['Mag'],c='maroon',label="V-R")
 plt.scatter(sciencecalibN3S['abs(V-R)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
 plt.scatter(sciencecalibN3L['abs(V-R)'],sciencecalibN3L['abs(V)'],c='gray',s=1,marker='o',label="L")
@@ -176,7 +178,7 @@ plt.ylabel(r"V")
 plt.legend()
 plt.savefig("matchV-R.png")
 
-plt.figure(9,figsize=(8,8))
+plt.figure(9)
 plt.plot(teoricas['R-I'],teoricas['Mv'],c='maroon',label="R-I")
 plt.scatter(sciencecalibN3S['abs(R-I)'],sciencecalibN3S['abs(V)'],c='darkblue',marker='*',label="S")
 plt.scatter(sciencecalibN3L['abs(R-I)'],sciencecalibN3L['abs(V)'],c='gray',s=1,marker='o',label="L")
@@ -186,6 +188,7 @@ plt.xlabel(r"R - I")
 plt.ylabel(r"V")
 plt.legend()
 plt.savefig("matchR-I.png")
+
 
 
 catalog.to_csv('new_catalog.dat')
