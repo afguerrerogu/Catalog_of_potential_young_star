@@ -18,7 +18,7 @@ This script will be used to obtain the magnitude of the stars in the standard sy
 
 guion2.cl\
 this script calculates the magnitudes in the science stars. run it in IRAF as: \
-> cl < script2.cl 
+> cl < guion2.cl 
 
 
 config_file
